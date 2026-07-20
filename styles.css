@@ -1,0 +1,149 @@
+/* Half-fixed DemoMart: some contrast still intentionally weak for remaining findings */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f3f3;
+  color: #777;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #ececec;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon-btn {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  cursor: pointer;
+  color: #333;
+}
+
+.hero {
+  padding: 48px 20px;
+  background: #e8e8e8;
+}
+
+.hero h1 {
+  min-height: 1.2em;
+  margin: 0 0 12px;
+  color: #222;
+}
+
+.low-contrast {
+  color: #b0b0b0;
+  background: #ececec;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 16px;
+  margin-right: 8px;
+  padding: 10px 16px;
+  background: #cfcfcf;
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+.banner {
+  padding: 0 20px 20px;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+}
+
+.section {
+  padding: 28px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  padding: 12px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-title {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #888;
+}
+
+.price {
+  margin: 6px 0 10px;
+}
+
+.buy {
+  display: inline-block;
+  min-width: 72px;
+  min-height: 34px;
+  padding: 8px 12px;
+  border: 1px solid #555;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.newsletter input[type="text"] {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  color: #aaa;
+}
+
+.newsletter label {
+  display: block;
+  margin-top: 8px;
+  color: #b5b5b5;
+}
+
+.footer {
+  padding: 24px 20px 40px;
+  background: #eaeaea;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer a {
+  color: #aaa;
+}
+
+iframe {
+  border: 1px solid #ddd;
+  background: #ddd;
+}

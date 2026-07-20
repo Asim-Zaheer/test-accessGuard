@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DemoMart Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--
+      AccessGuard test site — HALF FIX (for score testing).
+      Fixed ~half of findings. Remaining intentional failures below.
+    -->
+
+    <div class="topbar">
+      <img src="https://placehold.co/120x40/png" alt="DemoMart logo" />
+      <div class="nav-actions">
+        <!-- Still broken: empty link -->
+        <a href="#"></a>
+        <button class="icon-btn" type="button" aria-label="Open shopping cart" onclick="alert('cart')">
+          Cart
+        </button>
+        <button class="icon-btn" type="button" aria-label="Open account menu">
+          Account
+        </button>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>DemoMart everyday essentials</h1>
+      <p class="low-contrast">
+        Welcome to DemoMart — everyday essentials with unclear labels, missing text alternatives,
+        and controls that assistive technology cannot name.
+      </p>
+      <!-- Still broken: vague link text + low contrast -->
+      <a href="#products" class="cta">click here</a>
+      <button type="button" onclick="location.hash='products'">Shop products</button>
+    </div>
+
+    <div class="banner">
+      <img
+        src="https://placehold.co/900x220/cccccc/999999/png?text=Sale+Banner"
+        alt="Storewide sale on mugs, lamps, and desk accessories"
+      />
+    </div>
+
+    <div id="products" class="section">
+      <h2>Featured products</h2>
+      <h3>Popular this week</h3>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://placehold.co/280x180/png" alt="White ceramic mug on a wooden table" />
+          <div class="card-title">Ceramic Mug</div>
+          <div class="price low-contrast">$12</div>
+          <button class="buy" type="button">Add ceramic mug to cart</button>
+          <!-- Still broken: empty link -->
+          <a href="/product-1"></a>
+        </div>
+
+        <div class="card">
+          <!-- Still broken: no alt -->
+          <img src="https://placehold.co/280x180/dddddd/aaaaaa/png" />
+          <div class="card-title">Desk Lamp</div>
+          <div class="price low-contrast">$34</div>
+          <!-- Still broken: span used as button -->
+          <span class="buy" onclick="alert('added')">Add</span>
+          <a href="#">more</a>
+        </div>
+
+        <div class="card">
+          <!-- Still broken: no alt -->
+          <img src="https://placehold.co/280x180/eeeeee/bbbbbb/png" />
+          <h4>Notebook set</h4>
+          <div class="price low-contrast">$9</div>
+          <button class="buy" type="button">Buy notebook set</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section newsletter">
+      <h2>Join our list</h2>
+      <!-- Still broken: inputs without associated labels -->
+      <form action="#" method="get">
+        <input type="text" placeholder="Email" name="email" />
+        <input type="text" placeholder="Name" />
+        <input type="checkbox" />
+        <button type="submit">Submit</button>
+      </form>
+      <label>I agree to emails</label>
+    </div>
+
+    <div class="section faq">
+      <h2>FAQ</h2>
+      <h3>Shipping and returns</h3>
+      <p class="low-contrast">
+        Shipping takes 3–5 days. Returns are accepted within 14 days if unused.
+        Contact support using the unlabeled field above.
+      </p>
+      <a href="javascript:void(0)">Read more</a>
+      <a href="/help">click here</a>
+    </div>
+
+    <div class="footer">
+      <!-- Still broken: repeated vague link text -->
+      <a href="/privacy">click here</a>
+      <a href="/terms">click here</a>
+      <button type="button" aria-label="Back to top">Top</button>
+      <!-- Still broken: no alt -->
+      <img src="https://placehold.co/80x80/png" />
+      <iframe
+        src="about:blank"
+        width="300"
+        height="80"
+        title="DemoMart partner promotion"
+      ></iframe>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

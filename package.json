@@ -1,0 +1,10 @@
+{
+  "name": "accessguard-test-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Intentionally inaccessible demo site for AccessGuard scanner testing",
+  "scripts": {
+    "dev": "npx --yes serve -l 5055",
+    "start": "npx --yes serve -l 5055"
+  }
+}
