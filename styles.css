@@ -1,4 +1,4 @@
-/* Half-fixed DemoMart: some contrast still intentionally weak for remaining findings */
+/* Fully remediated DemoMart — WCAG AA contrast and clear focus */
 
 * {
   box-sizing: border-box;
@@ -7,57 +7,102 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f3f3f3;
-  color: #777;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+a {
+  color: #0b4f3f;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #1a5f4a;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #1a5f4a;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  top: 0.75rem;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 12px 20px;
-  background: #ececec;
+  background: #f4f6f5;
+  border-bottom: 1px solid #cfd6d3;
+}
+
+.brand {
+  display: inline-flex;
 }
 
 .nav-actions {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
   align-items: center;
 }
 
-.icon-btn {
-  min-height: 36px;
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  background: #fafafa;
+.icon-btn,
+.secondary-btn,
+.buy,
+button[type="submit"],
+.footer button {
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid #1a5f4a;
+  background: #1a5f4a;
+  color: #ffffff;
   cursor: pointer;
-  color: #333;
+  font: inherit;
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: #1a5f4a;
 }
 
 .hero {
   padding: 48px 20px;
-  background: #e8e8e8;
+  background: #eef5f2;
 }
 
 .hero h1 {
-  min-height: 1.2em;
   margin: 0 0 12px;
-  color: #222;
+  color: #14181f;
+  font-size: 2rem;
 }
 
-.low-contrast {
-  color: #b0b0b0;
-  background: #ececec;
+.hero p {
+  max-width: 40rem;
+  color: #222;
 }
 
 .cta {
   display: inline-block;
   margin-top: 16px;
   margin-right: 8px;
-  padding: 10px 16px;
-  background: #cfcfcf;
-  color: #a0a0a0;
+  padding: 0.7rem 1rem;
+  background: #1a5f4a;
+  color: #ffffff;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .banner {
@@ -67,6 +112,7 @@ body {
 .banner img {
   width: 100%;
   max-width: 900px;
+  height: auto;
   display: block;
 }
 
@@ -74,15 +120,23 @@ body {
   padding: 28px 20px;
 }
 
+.section-intro {
+  color: #333;
+  margin-top: 0;
+}
+
 .grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 
 .card {
-  background: #f7f7f7;
-  border: 1px solid #e5e5e5;
+  background: #ffffff;
+  border: 1px solid #cfd6d3;
   padding: 12px;
 }
 
@@ -93,57 +147,82 @@ body {
 }
 
 .card-title {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #888;
+  margin: 10px 0 6px;
+  font-size: 1.125rem;
+  color: #14181f;
 }
 
 .price {
-  margin: 6px 0 10px;
+  margin: 0 0 10px;
+  color: #1a1a1a;
+  font-weight: 600;
 }
 
-.buy {
+.card a {
   display: inline-block;
-  min-width: 72px;
-  min-height: 34px;
-  padding: 8px 12px;
-  border: 1px solid #555;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
+  margin-top: 8px;
 }
 
-.newsletter input[type="text"] {
-  display: block;
-  width: 100%;
+.newsletter .field {
+  margin-bottom: 12px;
   max-width: 320px;
-  margin-bottom: 8px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background: #fafafa;
-  color: #aaa;
 }
 
 .newsletter label {
   display: block;
-  margin-top: 8px;
-  color: #b5b5b5;
+  margin-bottom: 4px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.newsletter input[type="email"],
+.newsletter input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #445048;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.checkbox-field {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  max-width: 28rem;
+}
+
+.checkbox-field label {
+  font-weight: 400;
+}
+
+.faq p {
+  color: #222;
+  max-width: 40rem;
 }
 
 .footer {
   padding: 24px 20px 40px;
-  background: #eaeaea;
+  background: #f4f6f5;
+  border-top: 1px solid #cfd6d3;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
 }
 
+.footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .footer a {
-  color: #aaa;
+  color: #0b4f3f;
+  font-weight: 600;
 }
 
 iframe {
-  border: 1px solid #ddd;
-  background: #ddd;
+  border: 1px solid #445048;
+  background: #ffffff;
 }

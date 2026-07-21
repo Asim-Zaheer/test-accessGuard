@@ -1,6 +1,5 @@
-// Intentional accessibility anti-patterns for AccessGuard testing only.
-document.querySelectorAll(".card .buy").forEach(function (el) {
-  el.addEventListener("click", function () {
-    // empty handler noise
+document.querySelectorAll(".buy").forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Demo cart only — keeps native button semantics.
   });
 });

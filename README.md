@@ -1,27 +1,19 @@
 # AccessGuard Test Site
 
-## Current state: HALF FIX (score testing)
+## Current state: FULL FIX (target 100/100)
 
-Use this deploy to verify AccessGuard’s updated scoring:
-fewer issues should produce a score **above 0**, not stuck at zero.
+All scanner findings remediated:
 
-### Fixed
-- `lang="en"`
-- Heading text
-- Button names (most)
-- Some image alts (logo, banner, mug)
-- Iframe title
-
-### Still broken
+- `lang`, landmarks (`header` / `nav` / `main` / `footer`), skip link
+- Headings + order
+- Button / link names
+- Image `alt`
 - Form labels
-- Low contrast
-- Empty / “click here” links
-- Some images without alt
-- `<span>` used as a button
-- No `<main>` landmark
+- Iframe `title`
+- AA contrast + focus styles
 
-### Test
-1. Redeploy to Vercel  
-2. Restart AccessGuard backend (scoring fix)  
-3. Scan `https://test-access-guard.vercel.app`  
-4. Expect score **> 0** (issues still present, but improved vs original 0)
+## Re-scan
+
+1. Push/redeploy to Vercel  
+2. Scan `https://test-access-guard.vercel.app` in AccessGuard  
+3. Expect **~100/100** (0 axe violations)

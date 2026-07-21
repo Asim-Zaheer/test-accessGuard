@@ -3,118 +3,161 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DemoMart Shop</title>
+    <title>DemoMart Shop — accessible everyday essentials</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--
-      AccessGuard test site — HALF FIX (for score testing).
-      Fixed ~half of findings. Remaining intentional failures below.
-    -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <div class="topbar">
-      <img src="https://placehold.co/120x40/png" alt="DemoMart logo" />
-      <div class="nav-actions">
-        <!-- Still broken: empty link -->
-        <a href="#"></a>
-        <button class="icon-btn" type="button" aria-label="Open shopping cart" onclick="alert('cart')">
-          Cart
+    <header class="topbar">
+      <a class="brand" href="/">
+        <img
+          src="https://placehold.co/120x40/1a5f4a/ffffff/png?text=DemoMart"
+          alt="DemoMart home"
+          width="120"
+          height="40"
+        />
+      </a>
+      <nav class="nav-actions" aria-label="Account">
+        <a href="/wishlist">Wishlist</a>
+        <button class="icon-btn" type="button" onclick="alert('cart')">
+          Open shopping cart
         </button>
-        <button class="icon-btn" type="button" aria-label="Open account menu">
-          Account
+        <button class="icon-btn" type="button">Open account menu</button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">DemoMart everyday essentials</h1>
+        <p>
+          Welcome to DemoMart — shop mugs, lamps, and desk accessories with clear labels,
+          text alternatives, and keyboard-friendly controls.
+        </p>
+        <a href="#products" class="cta">Browse featured products</a>
+        <button type="button" class="secondary-btn" onclick="location.hash='products'">
+          Jump to product list
         </button>
-      </div>
-    </div>
+      </section>
 
-    <div class="hero">
-      <h1>DemoMart everyday essentials</h1>
-      <p class="low-contrast">
-        Welcome to DemoMart — everyday essentials with unclear labels, missing text alternatives,
-        and controls that assistive technology cannot name.
-      </p>
-      <!-- Still broken: vague link text + low contrast -->
-      <a href="#products" class="cta">click here</a>
-      <button type="button" onclick="location.hash='products'">Shop products</button>
-    </div>
+      <section class="banner" aria-label="Promotions">
+        <img
+          src="https://placehold.co/900x220/1a5f4a/ffffff/png?text=Storewide+Sale"
+          alt="Storewide sale on mugs, lamps, and desk accessories"
+          width="900"
+          height="220"
+        />
+      </section>
 
-    <div class="banner">
+      <section id="products" class="section" aria-labelledby="products-heading">
+        <h2 id="products-heading">Featured products</h2>
+        <p class="section-intro">Popular picks available this week.</p>
+
+        <ul class="grid">
+          <li class="card">
+            <article>
+              <img
+                src="https://placehold.co/280x180/e8f2ee/1a5f4a/png?text=Mug"
+                alt="White ceramic mug on a wooden table"
+                width="280"
+                height="180"
+              />
+              <h3 class="card-title">Ceramic Mug</h3>
+              <p class="price">$12</p>
+              <button class="buy" type="button">Add ceramic mug to cart</button>
+              <a href="/product-1">View ceramic mug details</a>
+            </article>
+          </li>
+
+          <li class="card">
+            <article>
+              <img
+                src="https://placehold.co/280x180/e8f2ee/1a5f4a/png?text=Lamp"
+                alt="Black desk lamp with an adjustable arm"
+                width="280"
+                height="180"
+              />
+              <h3 class="card-title">Desk Lamp</h3>
+              <p class="price">$34</p>
+              <button class="buy" type="button" onclick="alert('added')">
+                Add desk lamp to cart
+              </button>
+              <a href="/product-2">View desk lamp details</a>
+            </article>
+          </li>
+
+          <li class="card">
+            <article>
+              <img
+                src="https://placehold.co/280x180/e8f2ee/1a5f4a/png?text=Notebook"
+                alt="Stack of ruled notebooks with a pen"
+                width="280"
+                height="180"
+              />
+              <h3 class="card-title">Notebook set</h3>
+              <p class="price">$9</p>
+              <button class="buy" type="button">Buy notebook set</button>
+              <a href="/product-3">View notebook set details</a>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section newsletter" aria-labelledby="newsletter-heading">
+        <h2 id="newsletter-heading">Join our list</h2>
+        <form action="#" method="get">
+          <div class="field">
+            <label for="email">Email address</label>
+            <input id="email" type="email" name="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" name="name" autocomplete="name" required />
+          </div>
+          <div class="field checkbox-field">
+            <input id="agree" type="checkbox" name="agree" required />
+            <label for="agree">I agree to receive email updates from DemoMart</label>
+          </div>
+          <button type="submit">Subscribe to newsletter</button>
+        </form>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">FAQ</h2>
+        <h3>Shipping and returns</h3>
+        <p>
+          Shipping takes 3–5 days. Returns are accepted within 14 days if unused.
+          Contact support from the help center if you need assistance.
+        </p>
+        <p>
+          <a href="/shipping">Read more about shipping times</a>
+          ·
+          <a href="/help">Visit the help center</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav aria-label="Legal">
+        <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms of service</a>
+      </nav>
+      <button type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        Back to top
+      </button>
       <img
-        src="https://placehold.co/900x220/cccccc/999999/png?text=Sale+Banner"
-        alt="Storewide sale on mugs, lamps, and desk accessories"
+        src="https://placehold.co/80x80/1a5f4a/ffffff/png?text=DM"
+        alt="DemoMart brand mark"
+        width="80"
+        height="80"
       />
-    </div>
-
-    <div id="products" class="section">
-      <h2>Featured products</h2>
-      <h3>Popular this week</h3>
-
-      <div class="grid">
-        <div class="card">
-          <img src="https://placehold.co/280x180/png" alt="White ceramic mug on a wooden table" />
-          <div class="card-title">Ceramic Mug</div>
-          <div class="price low-contrast">$12</div>
-          <button class="buy" type="button">Add ceramic mug to cart</button>
-          <!-- Still broken: empty link -->
-          <a href="/product-1"></a>
-        </div>
-
-        <div class="card">
-          <!-- Still broken: no alt -->
-          <img src="https://placehold.co/280x180/dddddd/aaaaaa/png" />
-          <div class="card-title">Desk Lamp</div>
-          <div class="price low-contrast">$34</div>
-          <!-- Still broken: span used as button -->
-          <span class="buy" onclick="alert('added')">Add</span>
-          <a href="#">more</a>
-        </div>
-
-        <div class="card">
-          <!-- Still broken: no alt -->
-          <img src="https://placehold.co/280x180/eeeeee/bbbbbb/png" />
-          <h4>Notebook set</h4>
-          <div class="price low-contrast">$9</div>
-          <button class="buy" type="button">Buy notebook set</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="section newsletter">
-      <h2>Join our list</h2>
-      <!-- Still broken: inputs without associated labels -->
-      <form action="#" method="get">
-        <input type="text" placeholder="Email" name="email" />
-        <input type="text" placeholder="Name" />
-        <input type="checkbox" />
-        <button type="submit">Submit</button>
-      </form>
-      <label>I agree to emails</label>
-    </div>
-
-    <div class="section faq">
-      <h2>FAQ</h2>
-      <h3>Shipping and returns</h3>
-      <p class="low-contrast">
-        Shipping takes 3–5 days. Returns are accepted within 14 days if unused.
-        Contact support using the unlabeled field above.
-      </p>
-      <a href="javascript:void(0)">Read more</a>
-      <a href="/help">click here</a>
-    </div>
-
-    <div class="footer">
-      <!-- Still broken: repeated vague link text -->
-      <a href="/privacy">click here</a>
-      <a href="/terms">click here</a>
-      <button type="button" aria-label="Back to top">Top</button>
-      <!-- Still broken: no alt -->
-      <img src="https://placehold.co/80x80/png" />
       <iframe
         src="about:blank"
         width="300"
         height="80"
         title="DemoMart partner promotion"
       ></iframe>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>
